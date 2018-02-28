@@ -127,5 +127,4 @@ public class WxCom {
 		}
 		return access_token;
 	}
-
 }

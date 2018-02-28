@@ -17,7 +17,7 @@ public class TokenInterceptor extends HandlerInterceptorAdapter {
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
 		//登陆接口不需要拦截
-		if(request.getRequestURI().startsWith("/app/login")){
+		if(request.getRequestURI().startsWith("/app/main")){
 			return true;
 		}
 		String token=null;

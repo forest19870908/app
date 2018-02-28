@@ -16,7 +16,7 @@
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
-			<mvc:exclude-mapping  path="/api/login" /><!--不生效-->
+			<mvc:exclude-mapping  path="/api/main" /><!--不生效-->
 			<bean id="tokenInterceptor" class="com.cs.app.interceptor.TokenInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
