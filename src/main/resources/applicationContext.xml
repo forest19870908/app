@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans
+	xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+	http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd">
+	
+	
+	
+	<!-- 扫描自动注入的目录 -->
+	<context:component-scan base-package="com.cs.app" />
+	<!-- spring 拦截器 -->
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/**" />
+			<mvc:exclude-mapping  path="/api/login" /><!--不生效-->
+			<bean id="tokenInterceptor" class="com.cs.app.interceptor.TokenInterceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
+	<!-- 引入配置文件 -->
+	<context:property-placeholder location="classpath*:config.properties"/>
+
+
+
+	<!-- 引入springMVC配置 -->
+	<import resource="classpath*:spring-servlet.xml"/>
+	<!-- 引入datasource配置 -->
+	<import resource="classpath*:spring-datasource.xml"/>
+</beans>
