@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cs.app.mapper.TokenlogMapper">
+  <resultMap id="BaseResultMap" type="com.cs.app.model.Tokenlog">
+    <id column="uuid_f" jdbcType="VARCHAR" property="uuidF" />
+    <result column="id_f" jdbcType="INTEGER" property="idF" />
+    <result column="code_f" jdbcType="VARCHAR" property="codeF" />
+    <result column="name_f" jdbcType="VARCHAR" property="nameF" />
+    <result column="version_f" jdbcType="INTEGER" property="versionF" />
+    <result column="status_f" jdbcType="INTEGER" property="statusF" />
+    <result column="user_creator_f" jdbcType="VARCHAR" property="userCreatorF" />
+    <result column="createtime_f" jdbcType="TIMESTAMP" property="createtimeF" />
+    <result column="org_org_f" jdbcType="VARCHAR" property="orgOrgF" />
+    <result column="appuserid_f" jdbcType="VARCHAR" property="appuseridF" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    uuid_f, id_f, code_f, name_f, version_f, status_f, user_creator_f, createtime_f, 
+    org_org_f, appuserid_f
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from tbl_tokenlog
+    where uuid_f = #{uuidF,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from tbl_tokenlog
+    where uuid_f = #{uuidF,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.cs.app.model.Tokenlog">
+    insert into tbl_tokenlog (uuid_f, id_f, code_f, 
+      name_f, version_f, status_f, 
+      user_creator_f, createtime_f, org_org_f, 
+      appuserid_f)
+    values (#{uuidF,jdbcType=VARCHAR}, #{idF,jdbcType=INTEGER}, #{codeF,jdbcType=VARCHAR}, 
+      #{nameF,jdbcType=VARCHAR}, #{versionF,jdbcType=INTEGER}, #{statusF,jdbcType=INTEGER}, 
+      #{userCreatorF,jdbcType=VARCHAR}, #{createtimeF,jdbcType=TIMESTAMP}, #{orgOrgF,jdbcType=VARCHAR}, 
+      #{appuseridF,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.cs.app.model.Tokenlog">
+    insert into tbl_tokenlog
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uuidF != null">
+        uuid_f,
+      </if>
+      <if test="idF != null">
+        id_f,
+      </if>
+      <if test="codeF != null">
+        code_f,
+      </if>
+      <if test="nameF != null">
+        name_f,
+      </if>
+      <if test="versionF != null">
+        version_f,
+      </if>
+      <if test="statusF != null">
+        status_f,
+      </if>
+      <if test="userCreatorF != null">
+        user_creator_f,
+      </if>
+      <if test="createtimeF != null">
+        createtime_f,
+      </if>
+      <if test="orgOrgF != null">
+        org_org_f,
+      </if>
+      <if test="appuseridF != null">
+        appuserid_f,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uuidF != null">
+        #{uuidF,jdbcType=VARCHAR},
+      </if>
+      <if test="idF != null">
+        #{idF,jdbcType=INTEGER},
+      </if>
+      <if test="codeF != null">
+        #{codeF,jdbcType=VARCHAR},
+      </if>
+      <if test="nameF != null">
+        #{nameF,jdbcType=VARCHAR},
+      </if>
+      <if test="versionF != null">
+        #{versionF,jdbcType=INTEGER},
+      </if>
+      <if test="statusF != null">
+        #{statusF,jdbcType=INTEGER},
+      </if>
+      <if test="userCreatorF != null">
+        #{userCreatorF,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimeF != null">
+        #{createtimeF,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgOrgF != null">
+        #{orgOrgF,jdbcType=VARCHAR},
+      </if>
+      <if test="appuseridF != null">
+        #{appuseridF,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.cs.app.model.Tokenlog">
+    update tbl_tokenlog
+    <set>
+      <if test="idF != null">
+        id_f = #{idF,jdbcType=INTEGER},
+      </if>
+      <if test="codeF != null">
+        code_f = #{codeF,jdbcType=VARCHAR},
+      </if>
+      <if test="nameF != null">
+        name_f = #{nameF,jdbcType=VARCHAR},
+      </if>
+      <if test="versionF != null">
+        version_f = #{versionF,jdbcType=INTEGER},
+      </if>
+      <if test="statusF != null">
+        status_f = #{statusF,jdbcType=INTEGER},
+      </if>
+      <if test="userCreatorF != null">
+        user_creator_f = #{userCreatorF,jdbcType=VARCHAR},
+      </if>
+      <if test="createtimeF != null">
+        createtime_f = #{createtimeF,jdbcType=TIMESTAMP},
+      </if>
+      <if test="orgOrgF != null">
+        org_org_f = #{orgOrgF,jdbcType=VARCHAR},
+      </if>
+      <if test="appuseridF != null">
+        appuserid_f = #{appuseridF,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where uuid_f = #{uuidF,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.cs.app.model.Tokenlog">
+    update tbl_tokenlog
+    set id_f = #{idF,jdbcType=INTEGER},
+      code_f = #{codeF,jdbcType=VARCHAR},
+      name_f = #{nameF,jdbcType=VARCHAR},
+      version_f = #{versionF,jdbcType=INTEGER},
+      status_f = #{statusF,jdbcType=INTEGER},
+      user_creator_f = #{userCreatorF,jdbcType=VARCHAR},
+      createtime_f = #{createtimeF,jdbcType=TIMESTAMP},
+      org_org_f = #{orgOrgF,jdbcType=VARCHAR},
+      appuserid_f = #{appuseridF,jdbcType=VARCHAR}
+    where uuid_f = #{uuidF,jdbcType=VARCHAR}
+  </update>
+  <select id="selectList" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tbl_tokenlog order by id_f desc limit 1000
+  </select>
+</mapper>

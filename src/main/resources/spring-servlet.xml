@@ -20,6 +20,10 @@
 			</bean>
 		</mvc:message-converters>
 	</mvc:annotation-driven>
+
+	<!-- 拦截并重新指定路由地址 -->
+	<mvc:resources mapping="/public/**" location="/WEB-INF/public/" />
+
 	<!-- 配置freemarker -->
 	<bean id="freemarkerConfig"
 		  class="org.springframework.web.servlet.view.freemarker.FreeMarkerConfigurer">
@@ -46,5 +50,12 @@
 			<value>.ftl</value>
 		</property>
 		<property name="contentType" value="text/html;charset=UTF-8"></property>
+	</bean>
+
+	<bean class="com.cs.app.exception.GlobalExceptionResolver">
+		<!-- 定义默认的异常处理页面 -->
+		<property name="defaultErrorView" value="/error"/>
+		<!-- 定义异常处理页面用来获取异常信息的变量名，也可不定义，默认名为exception -->
+		<property name="exceptionAttribute" value="ex"/>
 	</bean>
 </beans>

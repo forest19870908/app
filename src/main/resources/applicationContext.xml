@@ -11,12 +11,13 @@
 	
 	
 	<!-- 扫描自动注入的目录 -->
-	<context:component-scan base-package="com.cs.app" />
+	<context:component-scan base-package="com.cs.app com.cs.core" />
 	<!-- spring 拦截器 -->
 	<mvc:interceptors>
 		<mvc:interceptor>
 			<mvc:mapping path="/**" />
 			<mvc:exclude-mapping  path="/api/main" /><!--不生效-->
+			<mvc:exclude-mapping  path="/public/*" />
 			<bean id="tokenInterceptor" class="com.cs.app.interceptor.TokenInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
