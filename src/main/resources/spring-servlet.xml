@@ -52,7 +52,7 @@
 		<property name="contentType" value="text/html;charset=UTF-8"></property>
 	</bean>
 
-	<bean class="com.cs.app.exception.GlobalExceptionResolver">
+	<bean class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<!-- 定义默认的异常处理页面 -->
 		<property name="defaultErrorView" value="/error"/>
 		<!-- 定义异常处理页面用来获取异常信息的变量名，也可不定义，默认名为exception -->

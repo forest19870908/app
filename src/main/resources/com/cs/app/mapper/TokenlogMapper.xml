@@ -153,6 +153,6 @@
   <select id="selectList" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
-    from tbl_tokenlog order by id_f desc limit 1000
+    from tbl_tokenlog where status_f=0 order by id_f desc limit 1000
   </select>
 </mapper>

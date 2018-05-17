@@ -30,6 +30,7 @@ public final class WebUtils {
 
 	private final static Integer month=3600*24*30;
 
+	private final static Integer year=3600*24*30*12;
 	/**
 	 * 不可实例化
 	 */
@@ -113,7 +114,7 @@ public final class WebUtils {
 	 *            cookie值
 	 */
 	public static void addCookie(HttpServletRequest request, HttpServletResponse response, String name, String value) {
-		addCookie(request, response, name, value, month, COOKIE_PATH, COOKIE_DOMAIN, null);
+		addCookie(request, response, name, value, year, COOKIE_PATH, COOKIE_DOMAIN, null);
 	}
 
 	/**

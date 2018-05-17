@@ -28,7 +28,7 @@ public class WxSendMsgUtil {
 	public static void main(String[] args) {
 		SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy年MM月dd日");
 		WxTextCardMsg wxMsg = new WxTextCardMsg();
-		wxMsg.setTouser("@all");
+		wxMsg.setTouser("ganquan");
 		wxMsg.setAgentid(1000002);
 		wxMsg.setTitle("待办通知");
 		wxMsg.setDescription("<div class=\"gray\">" + simpleDateFormat.format(new Date())

@@ -13,6 +13,8 @@
 <link href="${public}/easyui/themes/metro/easyui.css" rel="stylesheet" type="text/css" />
 <link href="${public}/easyui/themes/icon.css" rel="stylesheet" type="text/css" />
 <link href="${public}/easyui/themes/mobile.css" rel="stylesheet" type="text/css" />
+<link href="${public}/easyui/themes/color.css" rel="stylesheet" type="text/css">
+<link href="${public}/css/common.css" rel="stylesheet" type="text/css">
 
 
 

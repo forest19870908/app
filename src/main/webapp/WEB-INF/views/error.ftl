@@ -3,7 +3,7 @@
 
 <head><title>错误页面</title></head>
 <body>
-    <#if ex?index_of("com.cs.core.exception.ValidateException") gt 0>
+    <#if ex?index_of("com.cs.core.exception.ValidateException") = 0>
         <input type="hidden" value="${ex?substring(0,ex?last_index_of(":"))}">
     　　${ex?substring(ex?last_index_of(":")+1,ex?length)}
     <#else>

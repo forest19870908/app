@@ -36,7 +36,7 @@
 			targetPackage="com.cs.app.mapper" targetProject="src/main/java">
 			<property name="enableSubPackages" value="true" />
 		</javaClientGenerator>
-	<table tableName="tbl_tokenlog" domainObjectName="Tokenlog"
+	<table tableName="tbl_billfieldapp" domainObjectName="Billfieldapp"
 		enableCountByExample="false" enableUpdateByExample="false"
 			enableDeleteByExample="false" enableSelectByExample="false"
 			selectByExampleQueryId="false"></table>
